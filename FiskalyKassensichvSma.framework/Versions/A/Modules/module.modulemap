@@ -1,0 +1,8 @@
+framework module "FiskalyKassensichvSma" {
+	header "ref.h"
+    header "FiskalyKassensichvSma.objc.h"
+    header "Universe.objc.h"
+    header "FiskalyKassensichvSma.h"
+
+    export *
+}
