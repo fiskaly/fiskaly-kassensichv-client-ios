@@ -85,3 +85,7 @@ public func request(method: String,             // (required)   the method of th
                                                 // completes with .success or .failure
                     throws                      // can throw different errors
 ```
+
+## Code Examples
+
+Additional examples regarding the different requests that can be sent to the API can be found in the [projects test-file](https://github.com/fiskaly/fiskaly-kassensichv-client-ios/blob/master/kassensichv-client-ios-tests/kassensichv_client_ios_tests.swift).
