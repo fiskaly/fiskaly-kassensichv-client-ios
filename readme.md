@@ -1,6 +1,6 @@
 # fiskaly KassenSichV client for iOS
 
-The fiskaly KassenSichV client is an HTTP client that is needed<sup>[1](#fn1)</sup> for accessing the [kassensichv.io](https://kassensichv.io) API that implements a cloud-based, virtual **CTSS** (~Certified~ Technical Security System) / **TSE** (Technische Sicherheitseinrichtung) as defined by the German **KassenSichV** ([Kassen­sich­er­ungsver­ord­nung](https://www.bundesfinanzministerium.de/Content/DE/Downloads/Gesetze/2017-10-06-KassenSichV.pdf)).
+The fiskaly KassenSichV client is an HTTP client that is used for accessing the [kassensichv.io](https://kassensichv.io) API that implements a cloud-based, virtual **CTSS** (~Certified~ Technical Security System) / **TSE** (Technische Sicherheitseinrichtung) as defined by the German **KassenSichV** ([Kassen­sich­er­ungsver­ord­nung](https://www.bundesfinanzministerium.de/Content/DE/Downloads/Gesetze/2017-10-06-KassenSichV.pdf)).
 
 ## Build project
 
@@ -28,4 +28,61 @@ Once the Framework is extracted, open the .xcodeproj-File with XCode. Now you ha
 
 5. Add Other - Add Files - Select extracted sma-Framework
 
-Now you can build the project and run the tests provided (⌘B ⌘U).
+If you don't have an account on the [Fiskaly Dashboard](https://dashboard.fiskaly.com/) already you will need to create one and create an API-Key and -Secret pair.
+
+If you want to run the tests provided, you need to first add your API-Credentials as Environment-Variables or directly in the code. As soon as you have done that you can build and run the tests (⌘B ⌘U).
+
+## Working with the client
+
+Currently the client takes your parameters and handles the HTTPRequest with the KassensichV API. 
+
+### Creating a client 
+
+```Swift
+import kassensichv_client_ios
+
+let client = {
+        return Client(
+            apiKey: "Your API Key",
+            apiSecret: "Your API Secret")
+    }
+```
+
+### Sending a request to the API
+
+```Swift
+let tssUUID = UUID().uuidString
+
+do {
+    try client().send(
+        method: "PUT",
+        path: "tss/\(tssUUID)",
+        body: ["description":"CodeExampleTSS", "state":"INITIALIZED"],
+        completion: { (result) in
+            switch result {
+            case .success(let data, _):
+                // work with the response data 
+                break;
+            case .failure(let error):
+                print("Error: \(error)")
+                break;
+            }
+    })
+} catch {
+    print("Error while sending: \(error).")
+}
+```
+
+### Method signature of the send-function
+
+```Swift
+public func send(   method: String,             // (required)   the method of the request "GET", "POST", "PUT"
+                    path: String,               // (required)   the path for the request
+                    query: [String: String]?,   // (optional)   any query parameters for the request
+                    headers: [String:String]?,  // (optional)   additional headers you want to add
+                    body: [String:Any]?,        // (optional)   data for the request body
+                //  body: Data                                  you may also use the Data-Type
+                    completion: @escaping (Result<(Data, URLResponse?), Error>) -> Void) 
+                                                // completes with .success or .failure
+                    throws                      // can throw different errors
+```
