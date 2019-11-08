@@ -10,7 +10,7 @@ First of all, you have to initialize the required git submodule(s) using:
 $ git submodule update --init
 ```
 
-After that you need to extract the .tgz file to access the sma-Framework.
+After that you need to extract the .tgz file to access the SMA-Framework.
 
 ```
 $ tar -xvzf ./sma/dist/com.fiskaly.kassensichv.sma-ios.tgz
@@ -26,9 +26,9 @@ Once the Framework is extracted, open the .xcodeproj-File with XCode. Now you ha
  
 4. To Add frameworks, click the “+” below the list of frameworks.
 
-5. Add Other - Add Files - Select extracted sma-Framework
+5. Add Other - Add Files - Select extracted SMA-Framework
 
-If you don't have an account on the [Fiskaly Dashboard](https://dashboard.fiskaly.com/) already you will need to create one and create an API-Key and -Secret pair.
+If you don't have an account on the [fiskaly Dashboard](https://dashboard.fiskaly.com/) already you will need to create one and create an API-Key and -Secret pair.
 
 If you want to run the tests provided, you need to first add your API-Credentials as Environment-Variables or directly in the code. As soon as you have done that you can build and run the tests (⌘B ⌘U).
 
@@ -39,13 +39,12 @@ Currently the client takes your parameters and handles the HTTPRequest with the 
 ### Creating a client 
 
 ```Swift
-import kassensichv_client_ios
+import FiskalyKassensichvClient
 
-let client = {
-        return Client(
-            apiKey: "Your API Key",
-            apiSecret: "Your API Secret")
-    }
+let client = Client(
+                apiKey: "Your API-Key",
+                apiSecret: "Your API-Secret"
+            )
 ```
 
 ### Sending a request to the API
@@ -54,7 +53,7 @@ let client = {
 let tssUUID = UUID().uuidString
 
 do {
-    try client().request(
+    try client.request(
         method: "PUT",
         path: "tss/\(tssUUID)",
         body: ["description":"CodeExampleTSS", "state":"INITIALIZED"],

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import kassensichv_client_ios
+import FiskalyKassensichvClient
 
 class kassensichv_client_ios_tests: XCTestCase {
     
@@ -17,11 +17,10 @@ class kassensichv_client_ios_tests: XCTestCase {
     let expectationTX2 = XCTestExpectation(description: "Finish TX2 Call to API")
     let expectationExport = XCTestExpectation(description: "Finish Export Call to API")
     let expectation = XCTestExpectation(description: "Finish Client Call to API")
-    let client = {
-        return Client(
-            apiKey: ProcessInfo.processInfo.environment["api_key"]!,
-            apiSecret: ProcessInfo.processInfo.environment["api_secret"]!)
-    }
+    let client = Client(
+                    apiKey: ProcessInfo.processInfo.environment["api_key"]!,
+                    apiSecret: ProcessInfo.processInfo.environment["api_secret"]!
+                )
     let tssUUID = UUID().uuidString
     let clientUUID = UUID().uuidString
     let transactionUUID = UUID().uuidString
@@ -57,7 +56,7 @@ class kassensichv_client_ios_tests: XCTestCase {
     public func upsertTss(){
                 
         do {
-            try client().request(
+            try client.request(
                 method: "PUT",
                 path: "tss/\(tssUUID)",
                 body: ["description":"CodeExampleTSS", "state":"INITIALIZED"],
@@ -86,7 +85,7 @@ class kassensichv_client_ios_tests: XCTestCase {
     public func listTss(){
         
         do {
-            try client().request(
+            try client.request(
                 method: "GET",
                 path: "tss",
                 completion: { (result) in
@@ -119,7 +118,7 @@ class kassensichv_client_ios_tests: XCTestCase {
     public func upsertClient(){
                 
         do {
-            try client().request(
+            try client.request(
                 method: "PUT",
                 path: "tss/\(tssUUID)/client/\(clientUUID)",
                 body:["serial_number":UUID().uuidString],
@@ -148,7 +147,7 @@ class kassensichv_client_ios_tests: XCTestCase {
     public func listAllClients(){
         
         do {
-            try client().request(
+            try client.request(
                 method: "GET",
                 path: "client",
                 query:["order_by":"time_creation", "order":"asc"],
@@ -183,7 +182,7 @@ class kassensichv_client_ios_tests: XCTestCase {
         
         // Start a new Transaction
         do {
-            try client().request(
+            try client.request(
                 method: "PUT",
                 path: "tss/\(tssUUID)/tx/\(transactionUUID)",
                 body:["state":"ACTIVE", "client_id":clientUUID],
@@ -212,7 +211,7 @@ class kassensichv_client_ios_tests: XCTestCase {
         
         // Finish a new Transaction
         do {
-            try client().request(
+            try client.request(
                 method: "PUT",
                 path: "tss/\(tssUUID)/tx/\(transactionUUID)",
                 query: ["last_revision":"1"],
@@ -242,7 +241,7 @@ class kassensichv_client_ios_tests: XCTestCase {
     public func listAllTransactions(){
         
         do {
-            try client().request(
+            try client.request(
                 method: "GET",
                 path: "tx",
                 query:["order_by":"state", "order":"asc"],
@@ -276,7 +275,7 @@ class kassensichv_client_ios_tests: XCTestCase {
     public func triggerExport(){
         
         do {
-            try client().request(
+            try client.request(
                 method: "PUT",
                 path: "tss/\(tssUUID)/export/\(exportID)",
                 query:["client_id":clientUUID],
@@ -305,7 +304,7 @@ class kassensichv_client_ios_tests: XCTestCase {
     public func retrieveExport(){
         
         do {
-            try client().request(
+            try client.request(
                 method: "GET",
                 path: "tss/\(tssUUID)/export/\(exportID)",
                 completion: { (result) in
