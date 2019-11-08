@@ -38,6 +38,6 @@ Carthage/Build
 fastlane/report.xml
 fastlane/screenshots
 
-FiskalyKassensichvSma.framework
+FiskalyKassensichvSma.framework/
 
 .DS_Store
