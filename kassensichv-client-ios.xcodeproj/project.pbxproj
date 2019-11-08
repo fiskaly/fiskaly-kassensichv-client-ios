@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6A6F6AB2237428D60084BD3C /* kassensichv_client_ios_tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6F6AB1237428D60084BD3C /* kassensichv_client_ios_tests.swift */; };
-		6A6F6AB4237428D60084BD3C /* kassensichv_client_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A85B752236B39DB004AF057 /* kassensichv_client_ios.framework */; };
+		6A6F6AB4237428D60084BD3C /* FiskalyKassensichvClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A85B752236B39DB004AF057 /* FiskalyKassensichvClient.framework */; };
 		6A6F6AC023756C580084BD3C /* FiskalyKassensichvSma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6F6ABF23756C580084BD3C /* FiskalyKassensichvSma.framework */; };
 		6A85B757236B39DB004AF057 /* kassensichv_client_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A85B755236B39DB004AF057 /* kassensichv_client_ios.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6A85B75E236B39FE004AF057 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 6A85B75D236B39FE004AF057 /* .gitignore */; };
@@ -31,7 +31,7 @@
 		6A6F6AB1237428D60084BD3C /* kassensichv_client_ios_tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kassensichv_client_ios_tests.swift; sourceTree = "<group>"; };
 		6A6F6AB3237428D60084BD3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A6F6ABF23756C580084BD3C /* FiskalyKassensichvSma.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FiskalyKassensichvSma.framework; sourceTree = "<group>"; };
-		6A85B752236B39DB004AF057 /* kassensichv_client_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = kassensichv_client_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A85B752236B39DB004AF057 /* FiskalyKassensichvClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FiskalyKassensichvClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A85B755236B39DB004AF057 /* kassensichv_client_ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kassensichv_client_ios.h; sourceTree = "<group>"; };
 		6A85B756236B39DB004AF057 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A85B75D236B39FE004AF057 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -44,7 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A6F6AB4237428D60084BD3C /* kassensichv_client_ios.framework in Frameworks */,
+				6A6F6AB4237428D60084BD3C /* FiskalyKassensichvClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +91,7 @@
 		6A85B753236B39DB004AF057 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6A85B752236B39DB004AF057 /* kassensichv_client_ios.framework */,
+				6A85B752236B39DB004AF057 /* FiskalyKassensichvClient.framework */,
 				6A6F6AAF237428D60084BD3C /* kassensichv-client-ios-tests.xctest */,
 			);
 			name = Products;
@@ -154,7 +154,7 @@
 			);
 			name = "kassensichv-client-ios";
 			productName = "kassensichv-client-ios";
-			productReference = 6A85B752236B39DB004AF057 /* kassensichv_client_ios.framework */;
+			productReference = 6A85B752236B39DB004AF057 /* FiskalyKassensichvClient.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -421,7 +421,7 @@
 				);
 				MARKETING_VERSION = 0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fiskaly.kassensichv-client-ios";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = FiskalyKassensichvClient;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -452,7 +452,7 @@
 				);
 				MARKETING_VERSION = 0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fiskaly.kassensichv-client-ios";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = FiskalyKassensichvClient;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
