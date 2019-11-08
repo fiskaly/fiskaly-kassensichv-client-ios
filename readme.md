@@ -54,7 +54,7 @@ let client = {
 let tssUUID = UUID().uuidString
 
 do {
-    try client().send(
+    try client().request(
         method: "PUT",
         path: "tss/\(tssUUID)",
         body: ["description":"CodeExampleTSS", "state":"INITIALIZED"],
@@ -73,10 +73,10 @@ do {
 }
 ```
 
-### Method signature of the send-function
+### Method signature of the request-function
 
 ```Swift
-public func send(   method: String,             // (required)   the method of the request "GET", "POST", "PUT"
+public func request(method: String,             // (required)   the method of the request "GET", "POST", "PUT"
                     path: String,               // (required)   the path for the request
                     query: [String: String]?,   // (optional)   any query parameters for the request
                     headers: [String:String]?,  // (optional)   additional headers you want to add

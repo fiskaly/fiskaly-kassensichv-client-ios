@@ -60,63 +60,63 @@ public class Client {
         self.retryCounter = 0
     }
     
-    public func send( method: String,
+    public func request( method: String,
                       path: String,
                       completion: @escaping (Result<(Data, URLResponse?), Error>) -> Void) throws {
-        try self.send(method: method, path: path, query: nil, headers: nil, body: nil, completion: completion)
+        try self.request(method: method, path: path, query: nil, headers: nil, body: nil, completion: completion)
     }
     
-    public func send( method: String,
+    public func request( method: String,
                       path: String,
                       query: [String: String]?,
                       completion: @escaping (Result<(Data, URLResponse?), Error>) -> Void) throws {
-        try self.send(method: method, path: path, query: query, headers: nil, body: nil, completion: completion)
+        try self.request(method: method, path: path, query: query, headers: nil, body: nil, completion: completion)
     }
     
-    public func send( method: String,
+    public func request( method: String,
                       path: String,
                       body: Data,
                       completion: @escaping (Result<(Data, URLResponse?), Error>) -> Void) throws {
         let bodyDic = try JSONSerialization.jsonObject(with: body, options:JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
-        try self.send(method: method, path: path, query: nil, headers: nil, body: bodyDic as? Dictionary, completion: completion)
+        try self.request(method: method, path: path, query: nil, headers: nil, body: bodyDic as? Dictionary, completion: completion)
     }
     
-    public func send( method: String,
+    public func request( method: String,
                       path: String,
                       body: [String:Any]?,
                       completion: @escaping (Result<(Data, URLResponse?), Error>) -> Void) throws {
         
-        try self.send(method: method, path: path, query: nil, headers: nil, body: body, completion: completion)
+        try self.request(method: method, path: path, query: nil, headers: nil, body: body, completion: completion)
     }
     
-    public func send( method: String,
+    public func request( method: String,
                       path: String,
                       query: [String: String]?,
                       body: Data,
                       completion: @escaping (Result<(Data, URLResponse?), Error>) -> Void) throws {
         let bodyDic = try JSONSerialization.jsonObject(with: body, options:JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
-        try self.send(method: method, path: path, query: query, headers: nil, body: bodyDic as? Dictionary, completion: completion)
+        try self.request(method: method, path: path, query: query, headers: nil, body: bodyDic as? Dictionary, completion: completion)
     }
     
-    public func send( method: String,
+    public func request( method: String,
                       path: String,
                       query: [String: String]?,
                       body: [String:Any]?,
                       completion: @escaping (Result<(Data, URLResponse?), Error>) -> Void) throws {
-        try self.send(method: method, path: path, query: query, headers: nil, body: body, completion: completion)
+        try self.request(method: method, path: path, query: query, headers: nil, body: body, completion: completion)
     }
     
-    public func send( method: String,
+    public func request( method: String,
                       path: String,
                       query: [String: String]?,
                       headers: [String:String]?,
                       body: Data,
                       completion: @escaping (Result<(Data, URLResponse?), Error>) -> Void) throws {
         let bodyDic = try JSONSerialization.jsonObject(with: body, options:JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
-        try self.send(method: method, path: path, query: query, headers: headers, body: bodyDic as? Dictionary, completion: completion)
+        try self.request(method: method, path: path, query: query, headers: headers, body: bodyDic as? Dictionary, completion: completion)
     }
     
-    public func send( method: String,
+    public func request( method: String,
                       path: String,
                       query: [String: String]?,
                       headers: [String:String]?,
@@ -189,7 +189,7 @@ public class Client {
                                 self.retryCounter += 1
                                 self.accessToken = nil
                                 do {
-                                    try self.send(method: method, path: path, query: query, headers: headers, body: body, completion: { (retryResult) in
+                                    try self.request(method: method, path: path, query: query, headers: headers, body: body, completion: { (retryResult) in
                                         switch retryResult {
                                         case .success(let retryData, let retryResponse):
                                             completion(.success((retryData, retryResponse)))
