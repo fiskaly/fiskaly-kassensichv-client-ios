@@ -1,25 +1,31 @@
-# FiskalyKassenSichvExample for iOS
+# fiskaly KassenSichV client for iOS
 
-## What is this about?
+The fiskaly KassenSichV client is an HTTP client that is needed<sup>[1](#fn1)</sup> for accessing the [kassensichv.io](https://kassensichv.io) API that implements a cloud-based, virtual **CTSS** (~Certified~ Technical Security System) / **TSE** (Technische Sicherheitseinrichtung) as defined by the German **KassenSichV** ([Kassen­sich­er­ungsver­ord­nung](https://www.bundesfinanzministerium.de/Content/DE/Downloads/Gesetze/2017-10-06-KassenSichV.pdf)).
 
-This is a small (proof-of-concept) example, that demonstrates the how the client-side executed, pre-compiled, shared SMA library (contained in `FiskalyKassensichvSma.framework`) provided by fiskaly GmbH can be integrated into an Objective-C or Swift iOS app.
+## Build project
 
-This **is not** a feature-complete iOS client library! Instead it should give you a rough idea 
-- how we envision the integration of the SMA component on iOS devices, 
-- how the communiction between the PoS software and the SMA (i.e. via a JSON-RPC 2.0 based protocol) works 
-- and how the SMA is used to intercept and sign transaction-related requests.
+First of all, you have to initialize the required git submodule(s) using:
 
-This **should be** the starting point for developing a reusable Swift or Objective-C based client that will eventually be hosted on https://github.com/fiskaly/fiskaly-kassensichv-client-ios, similar to clients for other languages and runtimes (e.g. https://github.com/fiskaly/fiskaly-kassensichv-client-node).
+```
+$ git submodule update --init
+```
 
-## How to get this example running?
+After that you need to extract the .tgz file to access the sma-Framework.
 
-1. go to https://dashboard.fiskaly.com, create an account and generate some test data and an API key + secret
-2. `open FiskalyKassensichvExample.xcodeproj`
-3. navigate to `ViewController.swift`, search for `//TODO` comments and insert appropriate values for `tssId`, `clientId`, `apiKey` and `apiSecret`
-4. build and run the project on any iOS device or simulator (⌘B ⌘R)
-5. the app should now be running
-6. every click on the `Send` button will start a new transaction with the process data provided in the first text field
-7. the lower text field will contain the response body of the start transaction request from the API
+```
+$ tar -xvzf ./sma/dist/com.fiskaly.kassensichv.sma-ios.tgz
+```
 
+Once the Framework is extracted, open the .xcodeproj-File with XCode. Now you have to add the Framework as a library to be able to use it.
 
-![](screenshot-1.png)
+1. Select the project file from the project navigator on the left side of the project window.
+ 
+2. Select the target for where you want to add frameworks in the project settings editor.
+ 
+3. Select the “Build Phases” tab, and click the small triangle next to “Link Binary With Libraries” to view all of the frameworks in your application.
+ 
+4. To Add frameworks, click the “+” below the list of frameworks.
+
+5. Add Other - Add Files - Select extracted sma-Framework
+
+Now you can build the project and run the tests provided (⌘B ⌘U).
