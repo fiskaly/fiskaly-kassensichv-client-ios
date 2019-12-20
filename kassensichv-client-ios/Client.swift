@@ -149,7 +149,6 @@ public class Client {
         }
         
         var request = URLRequest(url: url)
-        request.httpMethod = method
         
         if let query = query {
             var components = URLComponents(string: "\(url)")!
@@ -160,6 +159,8 @@ public class Client {
             components.percentEncodedQuery = components.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
             request = URLRequest(url: components.url!)
         }
+        
+        request.httpMethod = method
         
         if let body = body {
             request.addValue("application/json", forHTTPHeaderField: "content-type")

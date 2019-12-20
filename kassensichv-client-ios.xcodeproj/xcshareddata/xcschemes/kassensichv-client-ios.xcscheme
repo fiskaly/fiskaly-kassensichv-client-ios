@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1110"
+   LastUpgradeVersion = "1130"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6A85B751236B39DB004AF057"
-               BuildableName = "kassensichv_client_ios.framework"
+               BuildableName = "FiskalyKassensichvClient.framework"
                BlueprintName = "kassensichv-client-ios"
                ReferencedContainer = "container:kassensichv-client-ios.xcodeproj">
             </BuildableReference>
@@ -30,12 +30,12 @@
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "api_secret"
-            value = "u98inEFr7TTKYykEnKytojIvr2xYjymxMFFA4BaRBWS"
+            value = "2zWAm58aq9JZp3wY75nKeMg1x2u57NBZPEUaKEF1Eis"
             isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "api_key"
-            value = "test_5vw14j9urtrom1cd4sc8yxdax_ios-client"
+            value = "test_53pq4jp3fe1n0h4h5ec2lyrja_ios"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
@@ -73,7 +73,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6A85B751236B39DB004AF057"
-            BuildableName = "kassensichv_client_ios.framework"
+            BuildableName = "FiskalyKassensichvClient.framework"
             BlueprintName = "kassensichv-client-ios"
             ReferencedContainer = "container:kassensichv-client-ios.xcodeproj">
          </BuildableReference>

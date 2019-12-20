@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A13FA2923ACC9EB004986C0 /* FiskalyKassensichvSma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A61109323ABD4ED00F16187 /* FiskalyKassensichvSma.framework */; };
+		6A61109723ACC9BC00F16187 /* FiskalyKassensichvSma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A61109323ABD4ED00F16187 /* FiskalyKassensichvSma.framework */; };
+		6A61109823ACC9BC00F16187 /* FiskalyKassensichvSma.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6A61109323ABD4ED00F16187 /* FiskalyKassensichvSma.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6A6F6AB2237428D60084BD3C /* kassensichv_client_ios_tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6F6AB1237428D60084BD3C /* kassensichv_client_ios_tests.swift */; };
 		6A6F6AB4237428D60084BD3C /* FiskalyKassensichvClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A85B752236B39DB004AF057 /* FiskalyKassensichvClient.framework */; };
-		6A6F6AC023756C580084BD3C /* FiskalyKassensichvSma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6F6ABF23756C580084BD3C /* FiskalyKassensichvSma.framework */; };
 		6A85B757236B39DB004AF057 /* kassensichv_client_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A85B755236B39DB004AF057 /* kassensichv_client_ios.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6A85B75E236B39FE004AF057 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 6A85B75D236B39FE004AF057 /* .gitignore */; };
 		6A85B760236B3A0E004AF057 /* .gitmodules in Resources */ = {isa = PBXBuildFile; fileRef = 6A85B75F236B3A0E004AF057 /* .gitmodules */; };
@@ -26,11 +28,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6A61109623ABD4EE00F16187 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6A61109823ACC9BC00F16187 /* FiskalyKassensichvSma.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		6A61109323ABD4ED00F16187 /* FiskalyKassensichvSma.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FiskalyKassensichvSma.framework; sourceTree = "<group>"; };
 		6A6F6AAF237428D60084BD3C /* kassensichv-client-ios-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "kassensichv-client-ios-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A6F6AB1237428D60084BD3C /* kassensichv_client_ios_tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kassensichv_client_ios_tests.swift; sourceTree = "<group>"; };
 		6A6F6AB3237428D60084BD3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6A6F6ABF23756C580084BD3C /* FiskalyKassensichvSma.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FiskalyKassensichvSma.framework; sourceTree = "<group>"; };
 		6A85B752236B39DB004AF057 /* FiskalyKassensichvClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FiskalyKassensichvClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A85B755236B39DB004AF057 /* kassensichv_client_ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kassensichv_client_ios.h; sourceTree = "<group>"; };
 		6A85B756236B39DB004AF057 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,6 +61,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A6F6AB4237428D60084BD3C /* FiskalyKassensichvClient.framework in Frameworks */,
+				6A13FA2923ACC9EB004986C0 /* FiskalyKassensichvSma.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A6F6AC023756C580084BD3C /* FiskalyKassensichvSma.framework in Frameworks */,
+				6A61109723ACC9BC00F16187 /* FiskalyKassensichvSma.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +79,7 @@
 		6A0B2CCC2371B4C10059B471 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6A6F6ABF23756C580084BD3C /* FiskalyKassensichvSma.framework */,
+				6A61109323ABD4ED00F16187 /* FiskalyKassensichvSma.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -147,6 +164,7 @@
 				6A85B74E236B39DB004AF057 /* Sources */,
 				6A85B74F236B39DB004AF057 /* Frameworks */,
 				6A85B750236B39DB004AF057 /* Resources */,
+				6A61109623ABD4EE00F16187 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -164,7 +182,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1120;
-				LastUpgradeCheck = 1110;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = fiskaly;
 				TargetAttributes = {
 					6A6F6AAE237428D60084BD3C = {
@@ -245,7 +263,12 @@
 		6A6F6AB7237428D60084BD3C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "kassensichv-client-ios-tests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -263,7 +286,12 @@
 		6A6F6AB8237428D60084BD3C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "kassensichv-client-ios-tests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -310,6 +338,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -373,6 +402,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -402,11 +432,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -423,6 +455,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fiskaly.kassensichv-client-ios";
 				PRODUCT_NAME = FiskalyKassensichvClient;
 				SKIP_INSTALL = YES;
+				STRIP_BITCODE_FROM_COPIED_FILES = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -433,11 +466,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -454,6 +489,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fiskaly.kassensichv-client-ios";
 				PRODUCT_NAME = FiskalyKassensichvClient;
 				SKIP_INSTALL = YES;
+				STRIP_BITCODE_FROM_COPIED_FILES = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
