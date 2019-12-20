@@ -44,6 +44,7 @@ class kassensichv_client_ios_tests: XCTestCase {
         self.upsertTss()
         self.upsertClient()
         self.startTransaction()
+        self.finishTransaction()
         
     }
     
