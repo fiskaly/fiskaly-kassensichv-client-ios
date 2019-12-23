@@ -1,3 +1,8 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=fiskaly_fiskaly-kassensichv-client-ios&metric=alert_status)](https://sonarcloud.io/dashboard?id=fiskaly_fiskaly-kassensichv-client-ios)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=fiskaly_fiskaly-kassensichv-client-ios&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=fiskaly_fiskaly-kassensichv-client-ios)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=fiskaly_fiskaly-kassensichv-client-ios&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=fiskaly_fiskaly-kassensichv-client-ios)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=fiskaly_fiskaly-kassensichv-client-ios&metric=security_rating)](https://sonarcloud.io/dashboard?id=fiskaly_fiskaly-kassensichv-client-ios)
+
 # fiskaly KassenSichV client for iOS
 
 The fiskaly KassenSichV client is an HTTP client that is used for accessing the [kassensichv.io](https://kassensichv.io) API that implements a cloud-based, virtual **CTSS** (~Certified~ Technical Security System) / **TSE** (Technische Sicherheitseinrichtung) as defined by the German **KassenSichV** ([Kassen­sich­er­ungsver­ord­nung](https://www.bundesfinanzministerium.de/Content/DE/Downloads/Gesetze/2017-10-06-KassenSichV.pdf)).
