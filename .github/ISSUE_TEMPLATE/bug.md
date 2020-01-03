@@ -8,13 +8,13 @@ labels: 'bug, needs triage'
 
 (A clear and concise description of what the bug is)
 
-## To Reproduce
+## Steps To Reproduce
 
 (Write your steps here:)
 
 1. Step 1...
-1. Step 2...
-1. Step 3...
+2. Step 2...
+3. Step 3...
 
 ## Expected behavior
 
